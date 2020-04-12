@@ -191,11 +191,71 @@ function loadDoc(callback) {
 //     console.log(posts);
 // }
 // showPosts();
-let k = $('h1')
-.empty()
-.text('new')
-.css('color', 'red')
-.on('click', function(){
-    alert('it');
-})
-console.log(k);
+// let k = $('h1')
+// .empty()
+// .text('new')
+// .css('color', 'red')
+// .on('click', function(){
+//     alert('it');
+// })
+// console.log(k);
+//_.collection.fetch({options})
+
+// class Animal {
+//     feed(){}
+//     voice(){}
+//     run(){}
+// }
+
+// class Dog extends Animal{
+//     beGood(){}
+// }
+
+// class Taksa extends Dog {
+//     beSmall(){}
+// }
+// let charlie = new Taksa();
+// charlie.loveFood = function (params) {
+    
+// }
+
+// console.log(charlie.toString);
+
+// function User(name){
+//     this.name = name;
+// }
+// let user = new User('Ivan');
+
+// class User {
+//     static voise(){
+
+//     }
+
+//     constructor(name, surname){
+//         this.name = name;
+//         this.surname = surname;
+//     }
+// }
+
+class Worker{
+    constructor(name,surname){
+        this.name = name;
+        this.surname = surname;
+    }
+    AddWork(){};
+    AddLevel(){};
+    SetTime(){};
+}
+
+class Officer extends Worker{
+    setDepartment(){};
+}
+
+class Manager extends Officer{
+    setNumOfOfficePeople(){};
+}
+ 
+class employee extends Manager{
+    setEmployaer(){};
+}
+let marta = new employee('Marta', 'Cook');

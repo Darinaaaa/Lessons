@@ -1,0 +1,62 @@
+[
+      {
+          "id": 1,
+          "autorName": "Mihail",
+          "autorSurname": "Bulgakov",
+          "bookName": "Master and Margarita"
+      },
+      {
+          "id": 2,
+          "autorName": "Aleksandr",
+          "autorSurname": "Pushkin",
+          "bookName": "Evgeniy Onegin"
+      },
+      {
+          "id": 3,
+          "autorName": "Fedor",
+          "autorSurname": "Dostoevskiy",
+          "bookName": "Crime and Punishment"
+      },
+      {
+          "id": 4,
+          "autorName": "Lev",
+          "autorSurname": "Tolstoy",
+          "bookName": "War and Peace"
+      },
+      {
+          "id": 5,
+          "autorName": "George",
+          "autorSurname": "Orwell",
+          "bookName": "1984"
+      },
+      {
+          "id": 6,
+          "autorName": "Nikolay",
+          "autorSurname": "Gogol",
+          "bookName": "Dead souls"
+      },
+      {
+          "id": 7,
+          "autorName": "Stiven",
+          "autorSurname": "King",
+          "bookName": "It"
+      },
+      {
+          "id": 8,
+          "autorName": "Stiven",
+          "autorSurname": "King",
+          "bookName": "The Talisman"
+      },
+      {
+          "id": 9,
+          "autorName": "Jack",
+          "autorSurname": "London",
+          "bookName": "Martin Eden"
+      },
+      {
+          "id": 10,
+          "autorName": "Jack",
+          "autorSurname": "London",
+          "bookName": "White fang"
+      }
+]
