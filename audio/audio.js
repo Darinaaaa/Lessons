@@ -9,7 +9,7 @@ let time = document.querySelector('.time');
 let progress = document.querySelector('.progress');
 let range = document.querySelector('.range');
 
-let audio = { 
+let audio = {  //объект с треками
     0:{
         id: 1,
         musicName: "Sundress",
@@ -48,7 +48,7 @@ let audio = {
         Time: "258.6"
     }
 }
-    for (let i = 0 ; i < Object.keys(audio).length;i++) {
+    for (let i = 0 ; i < Object.keys(audio).length;i++) { //отдельный пункт для каждого аудио
         let li = document.createElement('li');
         li.className = 'list-group-item';
         li.innerText= audio[i].artist+" - "+audio[i].musicName;
@@ -57,25 +57,25 @@ let audio = {
         aud.setAttribute('src',audio[i].link);
         list.appendChild(li);
     }
-    let song;
-    let id;
-    let curTime;
-    let cur;
+    let song; // переменная для текущего трека
+    let id; // для сопоставление текущего трека и предыдущего
+    let curTime;// текущее время трека
+    let cur; // процент заполнения перемотки
     for (let i = 0; i < list.childElementCount; i++) {
-        let onPlay = 0;
+        let onPlay = 0;// трек вкл
         let li = document.querySelectorAll('li');
         li[i].onclick = function () {
             let aud = document.querySelectorAll('audio');
-                document.getElementById('rotate').style.animation ='spin 5s linear 0s infinite';
-            if(id != i && id !=null){
+            document.getElementById('rotate').style.animation ='spin 5s linear 0s infinite'; //пластинка крутится 
+            if(id != i && id !=null){// соответствие предыдущего трека и нынешнего
                 song.pause();
                 song.currentTime = 0;
                 li[id].style.backgroundColor = 'white';
             }
             song = aud[i];
-            li[i].style.backgroundColor = 'whitesmoke';
-            onPlay = onPlay+1;
-            if(onPlay%2 == 0){
+            li[i].style.backgroundColor = 'whitesmoke'; //текущий пункт выделяется цвето
+            onPlay = onPlay+1; // нажатие на пункт
+            if(onPlay%2 == 0){ // вкл\выкл при нажатии на пункт
                song.pause();
                document.getElementById('rotate').style.animation ='none';
                li[i].style.backgroundColor = 'white';
@@ -84,19 +84,18 @@ let audio = {
                 document.getElementById('rotate').style.animation ='spin 5s linear 0s infinite';
                 li[i].style.backgroundColor = 'whitesmoke';
             }
-            title.innerHTML = li[i].textContent;
-            player.onclick=function(){
+            title.innerHTML = li[i].textContent; // название текущего трека
+            player.onclick=function(){ //кнопка play
                 song.play();
                 document.getElementById('rotate').style.animation ='spin 5s linear 0s infinite';
                 li[i].style.backgroundColor = 'whitesmoke';
             }
-            pause.onclick = function(){
+            pause.onclick = function(){//кнопка pause
                 song.pause();
                 document.getElementById('rotate').style.animation ='none';
                 li[i].style.backgroundColor = 'white';
             }
-            next.addEventListener('click',nextSong);
-            function nextSong(){
+            next.onclick = function (){//кнопка next
                 li[i].style.backgroundColor = 'white';
                 song.pause();
                 song.currentTime = 0;
@@ -112,7 +111,7 @@ let audio = {
                 document.getElementById('rotate').style.animation ='spin 5s linear 0s infinite';
                 li[i].style.backgroundColor = 'whitesmoke';
             }
-            previous.onclick = function(){
+            previous.onclick = function(){ //кнопка previous
                 li[i].style.backgroundColor = 'white';
                 song.pause();
                 song.currentTime = 0;
@@ -132,22 +131,22 @@ let audio = {
             song.addEventListener('timeupdate', addTimer);
             range.addEventListener('click', rangeUp);
 
-        function addTimer(){
+        function addTimer(){//обновление поточного времени трека
             curTime = song.currentTime;
-            cur = (song.currentTime*500)/audio[i].Time;
+            cur = (song.currentTime*100)/audio[i].Time;
             time.innerText = parseInt(curTime/60)+":"+parseInt(curTime%60);
             progress.style.width = cur+'%';
             if(song.currentTime == audio[i].Time){
                 document.getElementById('rotate').style.animation ='none';
             }
         }
-        function rangeUp (event){
+        function rangeUp (event){//прокрутка трека при нажатии на полосу
             progress.style.width = "0px";
             let newTime = (event.offsetX*audio[i].Time)/500;
             song.currentTime = newTime;
         }
     }
-    input.onchange = function(){
+    input.onchange = function(){ //громкость звука
         let val = input.value;
         console.log(val);
         let volume = val/100;
