@@ -1,0 +1,91 @@
+body{
+    margin: auto;
+    width: 90%;
+    padding: 50px;
+    background-color: thistle;
+}
+#player{
+    flex-direction: row; 
+    justify-content: center;
+    margin: auto;
+    background-color: white;
+    border-radius: 5ex;
+    display: flex;
+    width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#leftSide{
+    border: none;
+    background:none;
+    width: 350px;
+    margin: auto;
+}
+img{
+    width:350px;
+    
+}
+button{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+#rightSide{
+    background-color: white;
+    width: 600px;
+    display: flex; 
+    margin: auto;
+    flex-direction: column; 
+    justify-content: space-around;
+    padding-left: 5px;
+}
+#volume{
+    width: 300px;
+    padding-left: 5px;
+}
+#mute{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    padding: 5px;
+    width: 500px;
+}
+#btns{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    padding: 5px;
+}
+.bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 7px;
+    align-items: center;
+}
+#card-list{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.progress{
+    width: 0%; 
+    height: 15px;
+    background-color: darkseagreen;
+    max-width: 500px;
+}
+.range{
+    width:500px;
+    height: 15px;
+    background-color: thistle;
+    margin-left:20px;
+}
+#rotate{
+    animation: none;
+    
+}
+@keyframes spin{
+    from {transform: rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

@@ -237,25 +237,62 @@ function loadDoc(callback) {
 //     }
 // }
 
-class Worker{
-    constructor(name,surname){
-        this.name = name;
-        this.surname = surname;
-    }
-    AddWork(){};
-    AddLevel(){};
-    SetTime(){};
-}
+// class Worker{
+//     constructor(name,surname){
+//         this.name = name;
+//         this.surname = surname;
+//     }
+//     AddWork(){};
+//     AddLevel(){};
+//     SetTime(){};
+// }
 
-class Officer extends Worker{
-    setDepartment(){};
-}
+// class Officer extends Worker{
+//     setDepartment(){};
+// }
 
-class Manager extends Officer{
-    setNumOfOfficePeople(){};
-}
+// class Manager extends Officer{
+//     setNumOfOfficePeople(){};
+// }
  
-class employee extends Manager{
-    setEmployaer(){};
+// class employee extends Manager{
+//     setEmployaer(){};
+// }
+// let marta = new employee('Marta', 'Cook');
+
+// function count(){
+//     let counter = 0;
+//     return function(){
+//         let Vse = {
+//             Scope,
+//             Scope-parent
+//         }
+//         console.log(counter++);
+//     }
+// }
+// let res = count();
+// res();
+// res();
+// res();
+// res();
+// res();
+// res();
+
+class Animal{
+constructor( name, age){
+    this.name = name;
+    this.age = age;
 }
-let marta = new employee('Marta', 'Cook');
+}
+class Dog extends Animal{
+voice(){
+    console.log('woooooow')
+}
+}
+class Taksa extends Animal{
+givePaw(){
+    console.log('na paw');
+}
+}
+let koshka = new Taksa('koshka', 2);
+console.log(koshka);
